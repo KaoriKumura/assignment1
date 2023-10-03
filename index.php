@@ -27,7 +27,7 @@
             <h1>Registration</h1>
         </header>
         <main>
-         <form action="index.php" method="post" id="registration comfirmation" >
+         <form action="comfirmation.php" method="get" id="registration comfirmation" >
         <section>
             <div class="info">
                 <label for="fname">First Name</label>
@@ -85,7 +85,7 @@
                      //submit the insertion queries/data to database
      
                      $sql="INSERT INTO `registrations` (`fname`, `lname`, `address`, `phone`, `email`) 
-                     VALUES ('', '', '', '', NULL)";
+                     VALUES ('$fname', '$lname', '$address', '$phone', '$email')";
                      $result=mysqli_query($conn, $sql);
      
                  }

@@ -15,7 +15,25 @@
 		<main>
 
 			<?php
-                 $fname = $_GET['fname'];
+				
+				$servername="localhost";
+				$username="root";
+				$password="";
+				$database="assignment one";
+
+                //creating a connection
+		
+				$conn=mysqli_connect($servername, $username, $password, $database);
+		
+				//die if connection failed
+				if(!$conn){
+					die("Sorry, connection failed!!".mysqli_connect_error());
+				}else{
+					echo "Connection Sucessfull";
+				}
+				 
+				 
+				 $fname = $_GET['fname'];
                  $lname = $_GET['lname'];
                  $address = $_GET['address'];
                  $phone = $_GET['phone'];
@@ -28,25 +46,6 @@
 					Address: '.$address.'</br>
 					Phone: '.$phone.'</br>
 					Email: '.$email.'</p>');
-
-					$servername="localhost";
-					$username="root";
-					$password="";
-					$database="assignment one";
-		
-					//creating a connection
-		
-					$conn=mysqli_connect($servername, $username, $password, $database);
-		
-					//die if connection failed
-					if(!$conn)
-					{
-						die("Sorry, connection failed!!".mysqli_connect_error());
-					}
-					else
-					{
-						echo "Connection Sucessfull";
-					}
 		
 					$sql="SELECT * FROM `registrations`";
 					$result=mysqli_query($conn, $sql);
@@ -78,11 +77,24 @@
 						echo "Here is the records in the Table";
 						echo "<br/>";
 		
-						echo "Frist name: " . $row['fname'] . "Last name: " . $row['lname'] . "Address: " . $row['address'] . "Phone number: " . $row['phone'] . "email: " .$row['email'];
+						echo "Frist name: " . $row['fname'] . "<br/>Last name: " . $row['lname'] . 
+						 "<br/>Address: " . $row['address'] . "<br/>Phone number: " . $row['phone'] . "<br/>email: " .$row['email'];
 						echo "<br/>";
 
 					}
 				
 			?>
 		</main>
+		<div class="footer-basic">
+    <footer>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Kaori Kumura © 2023</p>
+    </footer> 
+	</body>    
 </html>
