@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Registration comfirmation</title>
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="CSS/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caudex&family=Croissant+One&family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
@@ -32,20 +32,27 @@
 					echo "Connection Sucessfull";
 				}
 				 
+				$fname='';
+				$lname='';
+				$address='';
+				$phone='';
+				$email='';
+
+				if(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['address']) && isset($_POST['phone']) && isset($_POST['email']))
+				{
+					$fname=$_POST['fname'];
+					$lname=$_POST['lname'];
+					$address=$_POST['address'];
+					$phone=$_POST['phone'];
+					$email=$_POST['email'];
+				}
 				 
-				 $fname = $_GET['fname'];
-                 $lname = $_GET['lname'];
-                 $address = $_GET['address'];
-                 $phone = $_GET['phone'];
-                 $email = $_GET['email'];
+				//  $fname = $_GET['fname'];
+                //  $lname = $_GET['lname'];
+                //  $address = $_GET['address'];
+                //  $phone = $_GET['phone'];
+                //  $email = $_GET['email'];
                 
-				
-				echo('<p>Thank You, '.$fname.' '.$lname.'.</br>
-					First name: '.$fname.'</br>
-					Last name: '.$lname.'</br>
-					Address: '.$address.'</br>
-					Phone: '.$phone.'</br>
-					Email: '.$email.'</p>');
 		
 					$sql="SELECT * FROM `registrations`";
 					$result=mysqli_query($conn, $sql);

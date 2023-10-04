@@ -136,3 +136,7 @@
     color:#aaa;
     margin-bottom:0;
   }
+
+  ul.menubar > a.move{
+    left: 50%;
+  }
