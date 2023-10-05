@@ -3,16 +3,27 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Registration comfirmation</title>
-		<link rel="stylesheet" href="CSS/style.css">
+		<link rel="stylesheet" href="css/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caudex&family=Croissant+One&family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	</head>
 	<body>
 		<header>
-			<h1>Registration comfirmed!</h1>
+			<h1 class="title">Registration Table</h1>
 		</header>
-		<main>
+		<main class="viewpoint">
+			<table class="table">
+				<thead>
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Address</th>
+					<th>Phone</th>
+					<th>Email</th>
+				</thead>
+				<tbody>
 
 			<?php
 				
@@ -26,71 +37,30 @@
 				$conn=mysqli_connect($servername, $username, $password, $database);
 		
 				//die if connection failed
-				if(!$conn){
+				 if(!$conn){
 					die("Sorry, connection failed!!".mysqli_connect_error());
-				}else{
-					echo "Connection Sucessfull";
-				}
-				 
-				$fname='';
-				$lname='';
-				$address='';
-				$phone='';
-				$email='';
-
-				if(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['address']) && isset($_POST['phone']) && isset($_POST['email']))
-				{
-					$fname=$_POST['fname'];
-					$lname=$_POST['lname'];
-					$address=$_POST['address'];
-					$phone=$_POST['phone'];
-					$email=$_POST['email'];
-				}
-				 
-				//  $fname = $_GET['fname'];
-                //  $lname = $_GET['lname'];
-                //  $address = $_GET['address'];
-                //  $phone = $_GET['phone'];
-                //  $email = $_GET['email'];
-                
+				 }
+               
 		
 					$sql="SELECT * FROM `registrations`";
 					$result=mysqli_query($conn, $sql);
 		
-					//Find the number of records in the table
-					$num=mysqli_num_rows($result);
-					echo "<br/>";
-					echo $num;
-		
-					//Display the records using if statement
-		
-					if($num>0)
-					{
-						$row=mysqli_fetch_assoc($result);
-						echo "<br/>";
-						echo var_dump($row);
-						echo "<br/>";
-		
-						$row=mysqli_fetch_assoc($result);
-						echo "<br/>";
-						echo var_dump($row);
-					}
-					
-					//display records using while statement
-		
 					while($row=mysqli_fetch_assoc($result))
 					{
-						echo "<br/>";
-						echo "Here is the records in the Table";
-						echo "<br/>";
-		
-						echo "Frist name: " . $row['fname'] . "<br/>Last name: " . $row['lname'] . 
-						 "<br/>Address: " . $row['address'] . "<br/>Phone number: " . $row['phone'] . "<br/>email: " .$row['email'];
-						echo "<br/>";
+						echo "<tr>
+						<td>" . $row['id'] . "</td>
+						<td>" . $row['fname'] . "</td>
+						<td>" . $row['lname'] . "</td>
+						<td>" . $row['address'] . "</td>
+						<td>" . $row['phone'] . "</td>
+						<td>" .$row['email'] . "</td>
+
+					</tr>";
 
 					}
-				
 			?>
+				</tbody>
+			</table>
 		</main>
 		<div class="footer-basic">
     <footer>
