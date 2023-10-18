@@ -2,17 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Registration comfirmation</title>
+		<title>Registration table</title>
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Caudex&family=Croissant+One&family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	</head>
+ 	</head>
 	<body>
 		<header>
 			<h1 class="title">Registration Table</h1>
 		</header>
+
 		<main class="viewpoint">
 			<table class="table">
 				<thead>
@@ -30,7 +27,7 @@
 				$servername="localhost";
 				$username="root";
 				$password="";
-				$database="assignment one";
+				$database="assignmentOne";
 
                 //creating a connection
 		
@@ -42,7 +39,7 @@
 				 }
                
 		
-					$sql="SELECT * FROM `registrations`";
+					$sql="SELECT * FROM registration";
 					$result=mysqli_query($conn, $sql);
 		
 					while($row=mysqli_fetch_assoc($result))
@@ -65,13 +62,13 @@
 		<div class="footer-basic">
     <footer>
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="index.php">Home</a></li>
             <li class="list-inline-item"><a href="#">Services</a></li>
             <li class="list-inline-item"><a href="#">About</a></li>
             <li class="list-inline-item"><a href="#">Terms</a></li>
             <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
         </ul>
-        <p class="copyright">Kaori Kumura © 2023</p>
+        <p class="copyright">© Kaori Kumura 2023</p>
     </footer> 
 	</body>    
 </html>

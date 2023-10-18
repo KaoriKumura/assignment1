@@ -3,13 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Caudex', serif;
-    font-family: 'Croissant One', cursive;
-    font-family: 'Montserrat Alternates', sans-serif;
   }
 
   body{
     background-color: azure;
+    
   }
 
  nav{
@@ -48,22 +46,33 @@
 
   h1{
     text-align: center;
-    margin-top: 1em;
+    margin-top: 2em;
     color: #565656;
   }
   
-  main{
+  main.index{
     line-height: 2.5em;
     text-align: center;
     padding: 0.2em 0.5em;
     margin: 2em auto;
     color: #565656;
-    background: #ffeaea;
-    box-shadow: 0px 0px 0px 10px #ffeaea;
+    background: rgba(240, 232, 232, 0.979);
     border: dashed 2px #ffc3c3;
     border-radius: 8px;
     width: 30%;
-    left: 35%;
+    letter-spacing: 1.5px;
+  }
+
+  main.viewpoint{
+    line-height: 2.5em;
+    text-align: center;
+    padding: 0.2em 2em;
+    margin: 2em auto;
+    color: #565656;
+    background: rgba(240, 232, 232, 0.979);
+    border: dashed 2px #ffc3c3;
+    border-radius: 8px;
+    width: 60%;
   }
 
   legend.option{
@@ -79,7 +88,7 @@
 .footer-basic{
     padding:40px 0;
     background-color:#ffffff;
-    color:#4b4c4d;
+    color:darkgray;
     background-color: azure;
   }
   
@@ -139,4 +148,15 @@
 
   ul.menubar > a.move{
     left: 50%;
+  }
+  
+  tbody{
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+
+  .comfirmation{
+    margin-top: 1em;
+    font-size: 20px;
+    letter-spacing: 1px;
   }
